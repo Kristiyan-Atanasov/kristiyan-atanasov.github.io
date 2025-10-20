@@ -51,6 +51,7 @@ html, body {
     text-align: center;
     z-index: 2;
   }
+
   .center-headings h1 {
     font-size: 4.2rem;
     font-weight: 400;
@@ -63,9 +64,11 @@ html, body {
   }
   .center-headings h2 {
     color: #e6dbff;
+    font-size: 1.6rem;
   }
   .center-headings p {
     color: #e6dbff;
+    font-size: 1rem;
   }
   .center-headings span {
     display: block;
@@ -271,6 +274,10 @@ html, body {
     }
     .modal-content {
       padding: 1.5rem 1rem 1.5rem 1rem;
+    }
+
+    .privacy-heading {
+      top: 7vh;
     }
   }
   
