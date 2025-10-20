@@ -34,3 +34,15 @@ form.addEventListener('submit', function(event) {
     alert('Oops! There was a problem submitting your form');
   });
 });
+
+// Cookie consent dismiss
+document.getElementById('acceptCookies').onclick = function() {
+  document.getElementById('cookieConsent').style.display = 'none';
+  localStorage.setItem('cookieConsent', 'accepted');
+};
+
+// Hide banner if accepted before
+if (localStorage.getItem('cookieConsent') === 'accepted') {
+  document.getElementById('cookieConsent').style.display = 'none';
+}
+

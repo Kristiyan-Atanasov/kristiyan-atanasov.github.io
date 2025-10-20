@@ -61,6 +61,12 @@ html, body {
     font-family: 'Quicksand', Arial, sans-serif;
     text-shadow: 0 6px 24px #4d527f80, 0 0 2px #fff;
   }
+  .center-headings h2 {
+    color: #e6dbff;
+  }
+  .center-headings p {
+    color: #e6dbff;
+  }
   .center-headings span {
     display: block;
     font-size: 2rem;
@@ -77,7 +83,7 @@ html, body {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 625px;
+    width: 615px;
     max-width: 65vw;
     z-index: 2;
     pointer-events: none;
@@ -205,6 +211,35 @@ html, body {
     line-height: 1;
     padding: 0;
   }
+
+  .cookieConsent {
+    position: fixed; 
+    bottom: 20px; 
+    left: 20px; 
+    right: 20px; 
+    background: rgba(0,0,0,0.85); 
+    color: white;
+    font-family: 'Quicksand', sans-serif; 
+    padding: 15px 20px; 
+    border-radius: 8px; display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 1000;
+  }
+
+  .cookieConsent span a {
+    color: white; 
+    text-decoration: underline;
+  }
+
+  .acceptCookies {
+    background-color: white; 
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-weight: bold;
+  }
   
   @media (max-width: 700px) {
     .header-row {
@@ -222,7 +257,6 @@ html, body {
       font-size: 1.18rem;
     }
     .girl-img {
-      width: 80vw;
       max-width: 90vw;
     }
     .contact-btn {
