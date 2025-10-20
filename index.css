@@ -1,0 +1,232 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', Arial, sans-serif;
+    min-height: 100%;
+    overflow: hidden;
+    background-color: #111;
+  }
+  
+  .main-bg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background: url('images/background.jpeg') no-repeat center center / cover;
+  }
+  
+  .header-row {
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    width: 80vw;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .header-logo {
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    z-index: 3;
+    text-shadow: 0 2px 6px #222a, 0 0 2px #d4aaff80;
+  }
+  
+  .center-headings {
+    position: absolute;
+    top: 18vh;
+    width: 100vw;
+    text-align: center;
+    z-index: 2;
+  }
+  .center-headings h1 {
+    font-size: 4.2rem;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 0.7rem;
+    line-height: 1.08;
+    font-family: 'Quicksand', Arial, sans-serif;
+    text-shadow: 0 6px 24px #4d527f80, 0 0 2px #fff;
+  }
+  .center-headings span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #e6dbff;
+    margin-top: 0.1rem;
+    letter-spacing: 0.08em;
+    text-shadow: 0 1px 7px #8e91cd80;
+    font-family: 'Quicksand', Arial, sans-serif;
+  }
+  
+  .girl-img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 625px;
+    max-width: 65vw;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .contact-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: #fff;
+    color: #34255d;
+    font-size: 1.08rem;
+    font-family: 'Quicksand', Arial, sans-serif;
+    border-radius: 999px;
+    box-shadow: 0 2px 16px #5d46a020;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.2s, color 0.18s;
+  }
+  .contact-btn:hover {
+    background: #ece9ff;
+    color: #7f64fa;
+    box-shadow: 0 4px 24px #8e92c055;
+  }
+  
+  /* Contact modal overlay */
+  .contact-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(52, 37, 93, 0.15);
+    backdrop-filter: blur(4px);
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact-modal.active {
+    display: flex;
+  }
+  
+  .modal-content {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 44px #61419a44;
+    padding: 2.4rem 2rem 2rem 2rem;
+    max-width: 360px;
+    width: 100%;
+    position: relative;
+    text-align: left;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.38rem;
+    font-weight: 700;
+    text-align: center;
+    color: #473070;
+    margin-bottom: 1.3rem;
+    font-family: 'Quicksand', Arial, sans-serif;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #6f5995;
+    margin-bottom: 0.2rem;
+    display: block;
+    font-weight: 500;
+  }
+  
+  input, textarea {
+    width: 100%;
+    font-size: 1.08rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1.5px solid #e2d8ff;
+    background: #f7f5ff;
+    margin-bottom: 1.1rem;
+    resize: vertical;
+    font-family: 'Quicksand', Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #9f78e1;
+    outline: none;
+  }
+  
+  textarea {
+    min-height: 80px;
+    max-height: 200px;
+  }
+  
+  .send-btn {
+    width: 100%;
+    background: linear-gradient(90deg, #7f64fa 0%, #9f78e1 100%);
+    color: #fff;
+    font-size: 1.16rem;
+    border: none;
+    border-radius: 999px;
+    padding: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 0.4rem;
+    box-shadow: 0 2px 16px #9f78e120;
+    transition: background 0.18s, box-shadow 0.2s;
+  }
+  .send-btn:hover {
+    background: linear-gradient(90deg, #9f78e1 0%, #7f64fa 100%);
+    box-shadow: 0 8px 30px #847bd699;
+  }
+  
+  .modal-close {
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #7f64fa;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+  }
+  
+  @media (max-width: 700px) {
+    .header-row {
+      top: 12px;
+    }
+    .header-logo {
+      left: 14px;
+      top: 8px;
+      font-size: 1.1rem;
+    }
+    .center-headings h1 {
+      font-size: 2.2rem;
+    }
+    .center-headings span {
+      font-size: 1.18rem;
+    }
+    .girl-img {
+      width: 80vw;
+      max-width: 90vw;
+    }
+    .contact-btn {
+      padding: 8px 14px;
+      font-size: 0.99rem;
+      border-radius: 18px;
+    }
+    .modal-content {
+      padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    }
+  }
+  

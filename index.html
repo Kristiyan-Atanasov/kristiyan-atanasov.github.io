@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Astroinsights</title>
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="main-bg"></div>
+  
+  <div class="header-row">
+    <div class="header-logo">Astroinsights</div>
+    <button class="contact-btn" id="openContact">Contact Us</button>
+  </div>
+
+  <div class="center-headings">
+    <h1>Astroinsights</h1>
+    <span>Unlock the universe within</span>
+    <span>Coming soon to the <strong>App Store</strong> &amp; <strong>Google Play</strong></span>
+  </div>
+  
+  <img src="images/girl.png" alt="Astroinsights Girl" class="girl-img" />
+
+  <!-- Contact Modal -->
+  <div class="contact-modal" id="contactModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal" title="Close">&times;</button>
+      <form id="contactForm">
+        <h2>Contact Astroinsights</h2>
+        
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name" />
+
+        <label for="msg">Message</label>
+        <textarea id="msg" name="msg" required placeholder="Type your message"></textarea>
+        
+        <button type="submit" class="send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
