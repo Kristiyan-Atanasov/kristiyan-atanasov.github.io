@@ -19,7 +19,7 @@ html, body {
     width: 100vw;
     height: 100vh;
     z-index: 0;
-    background: url('images/background.jpeg') no-repeat center center / cover;
+    background: url('images/background-final.jpeg') no-repeat center center / cover;
   }
   
   .header-row {
