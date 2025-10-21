@@ -54,26 +54,4 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('cookieConsent', 'accepted');
     };
   }
-
-  /*** PARALLAX SKY BACKGROUND EFFECT ***/
-  const bg = document.querySelector('.main-bg');
-  let idleAngle = 0;
-
-  if (bg) {
-    document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth) - 0.5;
-      const y = (e.clientY / window.innerHeight) - 0.5;
-      const moveX = x * 20;
-      const moveY = y * 20;
-
-      bg.style.backgroundPosition = `${50 + moveX / 10}% ${50 + moveY / 10}%`;
-    });
-
-    setInterval(() => {
-      idleAngle += 0.02;
-      const offsetX = Math.sin(idleAngle) * 1.5;
-      const offsetY = Math.cos(idleAngle) * 1.5;
-      bg.style.backgroundPosition = `${50 + offsetX}% ${50 + offsetY}%`;
-    }, 50);
-  }
 });
