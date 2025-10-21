@@ -32,22 +32,22 @@ html, body {
     position: absolute;
     top: 32px;
     left: 50%;
-    width: 80vw;
+    width: 85vw;
     transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 2;
   }
-  
   .header-logo {
-    font-family: 'Quicksand', Arial, sans-serif;
-    font-size: 1.5rem;
-    color: #fff;
-    font-weight: 400;
-    letter-spacing: 1.2px;
+    display: inline-block;
+  }
+  .header-logo a {
     z-index: 3;
-    text-shadow: 0 2px 6px #222a, 0 0 2px #d4aaff80;
+    background: url('images/logo.png') no-repeat center center / cover;
+    display: inline-block;
+    height: 90px;
+    width: 155px;
   }
   
   .center-headings {
@@ -94,8 +94,26 @@ html, body {
     transform: translateX(-50%);
     width: 615px;
     max-width: 65vw;
-    z-index: 2;
+    z-index: 1;
     pointer-events: none;
+  }
+
+  .coming-soon-pill {
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(18, 24, 39, 0.85);
+    color: #fff;
+    box-shadow: 0 6px 24px rgba(33, 41, 68, 0.26);
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.35em 1.2em;
+    border-radius: 2em;
+    text-align: center;
   }
   
   .contact-btn {
@@ -114,9 +132,7 @@ html, body {
     transition: background 0.18s, box-shadow 0.2s, color 0.18s;
   }
   .contact-btn:hover {
-    background: #ece9ff;
     color: #7f64fa;
-    box-shadow: 0 4px 24px #8e92c055;
   } 
   /* Contact modal overlay */
   .contact-modal {
@@ -232,14 +248,20 @@ html, body {
     bottom: 20px; 
     left: 20px; 
     right: 20px; 
-    background: rgba(0,0,0,0.85); 
-    color: white;
     font-family: 'Quicksand', sans-serif; 
     padding: 15px 20px; 
     border-radius: 8px; display: flex; 
     justify-content: space-between; 
     align-items: center; 
     z-index: 1000;
+    background: rgba(18, 24, 39, 1);
+    color: #fff;
+    box-shadow: 0 6px 24px rgba(33, 41, 68, 0.26);
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.35em 1.2em;
   }
 
   .cookieConsent span a {
@@ -254,6 +276,10 @@ html, body {
     border-radius: 4px; 
     cursor: pointer; 
     font-weight: bold;
+  }
+
+  .cookie-consent-hidden {
+    display: none !important;
   }
   
   @media (max-width: 700px) {
@@ -285,6 +311,10 @@ html, body {
 
     .privacy-heading {
       top: 7vh;
+    }
+
+    .coming-soon-pill {
+      width: 80%;
     }
   }
   

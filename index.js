@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   modal.onclick = function(e) {
     if (e.target === this) {
-      this.classList.remove('active');
+      modal.classList.remove('active');
     }
   };
 
@@ -44,18 +44,21 @@ document.addEventListener('DOMContentLoaded', function() {
   const cookieBanner = document.getElementById('cookieConsent');
 
   if (acceptBtn && cookieBanner) {
+    // SHOW the banner only if not accepted
     if (localStorage.getItem('cookieConsent') !== 'accepted') {
-      cookieBanner.classList.remove('cookie-consent-hidden');
+      cookieBanner.classList.remove('cookie-consent-hidden'); // <-- THIS SHOWS IT!
     } else {
       cookieBanner.classList.add('cookie-consent-hidden');
     }
 
+    // Hide on click
     acceptBtn.onclick = function() {
       cookieBanner.classList.add('cookie-consent-hidden');
       localStorage.setItem('cookieConsent', 'accepted');
     };
   }
 
+  /*** ORIENTATION LOCK (best effort, optional) ***/
   function lockOrientation() {
     if (screen.orientation && screen.orientation.lock) {
       screen.orientation.lock('portrait').catch((err) => {
