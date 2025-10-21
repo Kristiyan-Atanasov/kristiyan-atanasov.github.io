@@ -270,13 +270,23 @@ html, body {
   }
 
   .acceptCookies {
-    background-color: white; 
-    border: none; 
+    display: inline-block;
+    background: #fff;
+    color: #34255d;
+    font-size: 1.08rem;
     padding: 8px 16px; 
     border-radius: 4px; 
-    cursor: pointer; 
-    font-weight: bold;
+    font-family: 'Quicksand', Arial, sans-serif;
+    box-shadow: 0 2px 16px #5d46a020;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.2s, color 0.18s;
   }
+  .acceptCookies:hover {
+    color: #7f64fa;
+  } 
 
   .cookie-consent-hidden {
     display: none !important;
