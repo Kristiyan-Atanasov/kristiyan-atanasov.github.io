@@ -12,13 +12,35 @@
   
   <div class="header-row">
     <div class="header-logo"><a href="index.html"></a></div>
+    <button class="contact-btn" id="openContact">Contact Us</button>
   </div>
 
   <div class="center-headings">
     <h1>Thank You!</h1>
     <span>We will respond to you as soon as possible.</span>
   </div>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal" id="contactModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal" title="Close">&times;</button>
+      <form id="contactForm" action="https://formspree.io/f/mnngynbd" method="POST">
+        <input type="hidden" name="_next" value="https://astroinsights.io/thank-you.html" />
+        <h2>Contact Astroinsights</h2>
+        
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name" />
+
+        <label for="msg">Message</label>
+        <textarea id="msg" name="message" required placeholder="Type your message"></textarea>
+        
+        <button type="submit" class="send-btn">Send</button>
+      </form>
+    </div>
+  </div>
   
   <img src="images/girl-image-4.png" alt="Astroinsights Girl" class="girl-img" />
+
+  <script src="index.js"></script>
 </body>
 </html>
