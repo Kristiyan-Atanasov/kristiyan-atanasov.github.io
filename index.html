@@ -4,14 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Astroinsights</title>
+  <meta name="description" content="Astroinsights: Your personalized astrology app unlocking the universe within. Discover insights, star charts, and daily forecasts. Coming soon to the App Store and Google Play." />
   <link rel="stylesheet" href="index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Astroinsights" />
+  <meta property="og:description" content="Your personalized astrology app unlocking the universe within." />
+  <meta property="og:image" content="https://astroinsights.io/images/girl-image-4.png" />
+  <meta property="og:url" content="https://astroinsights.io" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Astroinsights" />
+  <meta name="twitter:description" content="Your personalized astrology app unlocking the universe within." />
+  <meta name="twitter:image" content="https://astroinsights.io/images/girl-image-4.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Astroinsights",
+    "operatingSystem": ["iOS", "Android"],
+    "applicationCategory": "Lifestyle",
+    "url": "https://astroinsights.io",
+    "description": "Your personalized astrology app unlocking the universe within.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="main-bg"></div>
   
   <div class="header-row">
-    <div class="header-logo"><a href="index.html">Astroinsights</a></div>
+    <div class="header-logo"><a href="index.html" style="color: inherit; text-decoration: none;">Astroinsights</a></div>
     <button class="contact-btn" id="openContact">Contact Us</button>
   </div>
 
@@ -21,7 +53,7 @@
     <span>Coming soon to the <strong>App Store</strong> &amp; <strong>Google Play</strong></span>
   </div>
   
-  <img src="images/girl-image-4.png" alt="Astroinsights Girl" class="girl-img" />
+  <img src="images/girl-image-4.png" alt="Astroinsights Girl using astrological app" class="girl-img" />
 
   <!-- Contact Modal -->
   <div class="contact-modal" id="contactModal">
