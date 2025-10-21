@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
   /*** CONTACT MODAL ***/
   const openBtn = document.getElementById('openContact');
   const closeBtn = document.getElementById('closeModal');
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.remove('active');
     }
   };
-
 
   /*** FORM SUBMISSION WITH REDIRECT ***/
   const form = document.getElementById('contactForm');
@@ -40,31 +38,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-
   /*** COOKIE CONSENT ***/
   const acceptBtn = document.getElementById('acceptCookies');
   const cookieBanner = document.getElementById('cookieConsent');
 
   if (acceptBtn && cookieBanner) {
     if (localStorage.getItem('cookieConsent') !== 'accepted') {
-      cookieBanner.style.display = 'flex';
+      cookieBanner.classList.remove('cookie-consent-hidden');
     } else {
-      cookieBanner.style.display = 'none';
+      cookieBanner.classList.add('cookie-consent-hidden');
     }
 
     acceptBtn.onclick = function() {
-      cookieBanner.style.display = 'none';
+      cookieBanner.classList.add('cookie-consent-hidden');
       localStorage.setItem('cookieConsent', 'accepted');
     };
   }
-
 
   /*** PARALLAX SKY BACKGROUND EFFECT ***/
   const bg = document.querySelector('.main-bg');
   let idleAngle = 0;
 
   if (bg) {
-    // Mouse movement parallax
     document.addEventListener('mousemove', (e) => {
       const x = (e.clientX / window.innerWidth) - 0.5;
       const y = (e.clientY / window.innerHeight) - 0.5;
@@ -74,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
       bg.style.backgroundPosition = `${50 + moveX / 10}% ${50 + moveY / 10}%`;
     });
 
-    // Subtle idle motion when mouse is not moving
     setInterval(() => {
       idleAngle += 0.02;
       const offsetX = Math.sin(idleAngle) * 1.5;
