@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
   /*** CONTACT MODAL ***/
   const openBtn = document.getElementById('openContact');
   const closeBtn = document.getElementById('closeModal');
@@ -54,4 +55,18 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('cookieConsent', 'accepted');
     };
   }
+
+  function lockOrientation() {
+    if (screen.orientation && screen.orientation.lock) {
+      screen.orientation.lock('portrait').catch((err) => {
+        console.log('Orientation lock failed or not permitted:', err);
+      });
+    }
+    window.removeEventListener('touchstart', lockOrientation);
+    window.removeEventListener('click', lockOrientation);
+  }
+
+  window.addEventListener('touchstart', lockOrientation, { once: true });
+  window.addEventListener('click', lockOrientation, { once: true });
+
 });
