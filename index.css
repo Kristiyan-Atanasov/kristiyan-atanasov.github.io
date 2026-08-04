@@ -3,16 +3,18 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Quicksand', Arial, sans-serif;
-    min-height: 100%;
-    overflow: hidden;
     background-color: #111;
   }
 
+  body.home {
+    overflow: hidden;
+  }
+
   a {
-    text-decoration: none; 
+    text-decoration: none;
     color: inherit;
   }
-  
+
   .main-bg {
     position: fixed;
     top: 0;
@@ -20,14 +22,23 @@ html, body {
     width: 100%;
     height: 100%;
     background: url('images/background-final.jpeg') no-repeat center center / cover;
-    transition: background-position 0.1s ease;
     z-index: 0;
   }
 
-  .main-bg {
-    background: url('images/background-final.jpeg') no-repeat center center / cover;
+  .page {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    height: 100dvh;
+    width: min(1180px, 90vw);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1.25rem 0 calc(1.1rem + env(safe-area-inset-bottom, 0px));
   }
-  
+
   .header-row {
     position: absolute;
     top: 32px;
@@ -39,17 +50,79 @@ html, body {
     align-items: center;
     z-index: 2;
   }
+
+  .page .header-row {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    transform: none;
+    flex-shrink: 0;
+  }
+
   .header-logo {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
   }
-  .header-logo a {
+
+  .header-logo-mark {
     z-index: 3;
-    background: url('images/logo.png') no-repeat center center / cover;
+    background: url('images/logo-app.png') no-repeat center center / contain;
     display: inline-block;
-    height: 90px;
-    width: 155px;
+    height: 72px;
+    width: 72px;
+    flex-shrink: 0;
   }
-  
+
+  .header-logo-text {
+    color: #fff;
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .page-main {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(2.2rem, 5vh, 3.6rem);
+  }
+
+  .brand-block {
+    text-align: center;
+    flex-shrink: 0;
+    padding: 0 0.5rem;
+  }
+
+  .brand-block h1 {
+    font-size: clamp(2.2rem, 5.2vw, 3.6rem);
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 2px;
+    margin: 0 0 0.5rem;
+    line-height: 1.08;
+    font-family: 'Quicksand', Arial, sans-serif;
+    text-shadow: 0 6px 24px #4d527f80, 0 0 2px #fff;
+  }
+
+  .brand-block span {
+    display: block;
+    font-size: clamp(1.05rem, 2.2vw, 1.55rem);
+    font-weight: 400;
+    color: #e6dbff;
+    letter-spacing: 0.08em;
+    text-shadow: 0 1px 7px #8e91cd80;
+    font-family: 'Quicksand', Arial, sans-serif;
+  }
+
   .center-headings {
     position: absolute;
     top: 18vh;
@@ -68,14 +141,17 @@ html, body {
     font-family: 'Quicksand', Arial, sans-serif;
     text-shadow: 0 6px 24px #4d527f80, 0 0 2px #fff;
   }
+
   .center-headings h2 {
     color: #e6dbff;
     font-size: 1.6rem;
   }
+
   .center-headings p {
     color: #e6dbff;
     font-size: 1rem;
   }
+
   .center-headings span {
     display: block;
     font-size: 2rem;
@@ -86,36 +162,83 @@ html, body {
     text-shadow: 0 1px 7px #8e91cd80;
     font-family: 'Quicksand', Arial, sans-serif;
   }
-  
-  .girl-img {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 615px;
-    max-width: 65vw;
-    z-index: 1;
-    pointer-events: none;
-  }
 
   .coming-soon-pill {
-    position: absolute;
-    z-index: 2;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(18, 24, 39, 0.85);
+    flex-shrink: 0;
+    margin-top: 1.15rem;
+    background: rgba(18, 24, 39, 0.88);
+    border: 1px solid rgba(230, 219, 255, 0.16);
     color: #fff;
-    box-shadow: 0 6px 24px rgba(33, 41, 68, 0.26);
+    box-shadow: 0 6px 24px rgba(33, 41, 68, 0.32);
     font-family: 'Quicksand', Arial, sans-serif;
-    font-size: 1.15rem;
+    font-size: clamp(0.92rem, 1.5vw, 1.08rem);
     font-weight: 500;
     letter-spacing: 0.02em;
-    padding: 0.35em 1.2em;
+    padding: 0.5em 1.45em;
     border-radius: 2em;
     text-align: center;
   }
-  
+
+  .features {
+    width: 100%;
+    min-height: 0;
+    flex: 0 1 auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.9rem, 1.8vh, 1.35rem);
+  }
+
+  .feature-item {
+    background: rgba(18, 24, 39, 0.74);
+    border: 1px solid rgba(230, 219, 255, 0.14);
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 28px rgba(17, 14, 40, 0.28);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: clamp(1rem, 1.8vh, 1.25rem) clamp(0.95rem, 1.4vw, 1.2rem);
+    color: #fff;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .feature-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(159, 120, 225, 0.45);
+    box-shadow: 0 12px 32px rgba(79, 64, 160, 0.28);
+  }
+
+  .feature-icon {
+    width: clamp(1.65rem, 2.5vh, 2.1rem);
+    height: clamp(1.65rem, 2.5vh, 2.1rem);
+    margin-bottom: 0.65rem;
+    color: #cbb8ff;
+    filter: drop-shadow(0 0 10px rgba(127, 100, 250, 0.35));
+  }
+
+  .feature-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .feature-item h3 {
+    margin: 0 0 0.4rem;
+    color: #fff;
+    font-size: clamp(0.95rem, 1.35vw, 1.08rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .feature-item p {
+    margin: 0;
+    color: #d9d0f5;
+    font-size: clamp(0.82rem, 1.15vw, 0.92rem);
+    line-height: 1.45;
+    font-weight: 400;
+  }
+
   .contact-btn {
     display: inline-block;
     padding: 12px 32px;
@@ -131,10 +254,11 @@ html, body {
     cursor: pointer;
     transition: background 0.18s, box-shadow 0.2s, color 0.18s;
   }
+
   .contact-btn:hover {
     color: #7f64fa;
-  } 
-  /* Contact modal overlay */
+  }
+
   .contact-modal {
     opacity: 0;
     display: flex;
@@ -151,13 +275,13 @@ html, body {
     justify-content: center;
     align-items: center;
   }
-  
+
   .contact-modal.active {
     display: flex;
     opacity: 1;
     visibility: visible;
   }
-  
+
   .modal-content {
     background: #fff;
     border-radius: 18px;
@@ -168,7 +292,7 @@ html, body {
     position: relative;
     text-align: left;
   }
-  
+
   .modal-content h2 {
     font-size: 1.38rem;
     font-weight: 700;
@@ -177,7 +301,7 @@ html, body {
     margin-bottom: 1.3rem;
     font-family: 'Quicksand', Arial, sans-serif;
   }
-  
+
   label {
     font-size: 1rem;
     color: #6f5995;
@@ -185,7 +309,7 @@ html, body {
     display: block;
     font-weight: 500;
   }
-  
+
   input, textarea {
     width: 100%;
     font-size: 1.08rem;
@@ -198,17 +322,17 @@ html, body {
     font-family: 'Quicksand', Arial, sans-serif;
     box-sizing: border-box;
   }
-  
+
   input:focus, textarea:focus {
     border-color: #9f78e1;
     outline: none;
   }
-  
+
   textarea {
     min-height: 80px;
     max-height: 200px;
   }
-  
+
   .send-btn {
     width: 100%;
     background: linear-gradient(90deg, #7f64fa 0%, #9f78e1 100%);
@@ -224,11 +348,12 @@ html, body {
     box-shadow: 0 2px 16px #9f78e120;
     transition: background 0.18s, box-shadow 0.2s;
   }
+
   .send-btn:hover {
     background: linear-gradient(90deg, #9f78e1 0%, #7f64fa 100%);
     box-shadow: 0 8px 30px #847bd699;
   }
-  
+
   .modal-close {
     position: absolute;
     right: 16px;
@@ -244,15 +369,14 @@ html, body {
 
   .cookieConsent {
     display: none;
-    position: fixed; 
-    bottom: 20px; 
-    left: 20px; 
-    right: 20px; 
-    font-family: 'Quicksand', sans-serif; 
-    padding: 15px 20px; 
-    border-radius: 8px; display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 1000;
     background: rgba(18, 24, 39, 1);
     color: #fff;
@@ -265,7 +389,7 @@ html, body {
   }
 
   .cookieConsent span a {
-    color: white; 
+    color: white;
     text-decoration: underline;
   }
 
@@ -274,8 +398,8 @@ html, body {
     background: #fff;
     color: #34255d;
     font-size: 1.08rem;
-    padding: 8px 16px; 
-    border-radius: 4px; 
+    padding: 8px 16px;
+    border-radius: 4px;
     font-family: 'Quicksand', Arial, sans-serif;
     box-shadow: 0 2px 16px #5d46a020;
     font-weight: 600;
@@ -284,37 +408,93 @@ html, body {
     cursor: pointer;
     transition: background 0.18s, box-shadow 0.2s, color 0.18s;
   }
+
   .acceptCookies:hover {
     color: #7f64fa;
-  } 
+  }
 
   .cookie-consent-hidden {
     display: none !important;
   }
-  
+
+  .privacy-heading {
+    position: relative;
+    top: 18vh;
+    width: min(720px, 88vw);
+    margin: 0 auto 4rem;
+    text-align: left;
+    z-index: 2;
+    padding-bottom: 3rem;
+  }
+
+  @media (max-width: 1100px) {
+    .features-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .page {
+      width: min(720px, 92vw);
+    }
+
+    .feature-item {
+      padding: 1.1rem 1.05rem;
+    }
+
+    .feature-item p {
+      font-size: 0.88rem;
+    }
+  }
+
   @media (max-width: 700px) {
+    body.home {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .page {
+      height: auto;
+      min-height: 100vh;
+      min-height: 100dvh;
+      width: min(100%, calc(100vw - 1.5rem));
+      padding: 0.75rem 0 calc(1.4rem + env(safe-area-inset-bottom, 0px));
+    }
+
     .header-row {
-      top: 12px;
+      top: 14px;
+      width: calc(100vw - 1.5rem);
     }
-    .header-logo {
-      left: 14px;
-      top: 8px;
-      font-size: 1.1rem;
+
+    .header-logo-mark {
+      height: 52px;
+      width: 52px;
     }
-    .center-headings h1 {
-      font-size: 2.2rem;
+
+    .header-logo-text {
+      font-size: 1.05rem;
     }
-    .center-headings span {
-      font-size: 1.18rem;
+
+    .brand-block {
+      padding: 0.35rem 0.25rem 0;
     }
-    .girl-img {
-      max-width: 90vw;
+
+    .brand-block h1 {
+      font-size: 1.85rem;
+      margin-bottom: 0.4rem;
     }
+
+    .brand-block span {
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+    }
+
     .contact-btn {
-      padding: 8px 14px;
-      font-size: 0.99rem;
-      border-radius: 18px;
+      padding: 9px 16px;
+      font-size: 0.92rem;
+      border-radius: 999px;
+      white-space: nowrap;
     }
+
     .modal-content {
       padding: 1.5rem 1rem 1.5rem 1rem;
     }
@@ -324,7 +504,116 @@ html, body {
     }
 
     .coming-soon-pill {
-      width: 80%;
+      width: auto;
+      max-width: 92%;
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      padding: 0.55em 1.2em;
+      line-height: 1.35;
+    }
+
+    .page-main {
+      gap: 1.85rem;
+      justify-content: flex-start;
+      padding-top: 0.85rem;
+      padding-bottom: 0.25rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .feature-item {
+      padding: 0.95rem 0.85rem;
+      border-radius: 1rem;
+      min-height: 100%;
+      box-sizing: border-box;
+    }
+
+    .feature-icon {
+      width: 1.7rem;
+      height: 1.7rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .feature-item h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .feature-item p {
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    .center-headings h1 {
+      font-size: 2.2rem;
+    }
+
+    .center-headings span {
+      font-size: 1.18rem;
     }
   }
-  
+
+  @media (max-width: 420px) {
+    .header-logo-text {
+      display: none;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+
+    .feature-item {
+      padding: 1rem 0.95rem;
+    }
+
+    .feature-item h3 {
+      font-size: 0.98rem;
+    }
+
+    .feature-item p {
+      font-size: 0.86rem;
+    }
+
+    .brand-block h1 {
+      font-size: 1.7rem;
+    }
+  }
+
+  @media (max-height: 760px) and (min-width: 701px) {
+    .header-logo-mark {
+      height: 56px;
+      width: 56px;
+    }
+
+    .page-main {
+      gap: 1.75rem;
+    }
+
+    .brand-block h1 {
+      font-size: 2.3rem;
+    }
+
+    .brand-block span {
+      font-size: 1.1rem;
+    }
+
+    .features-grid {
+      gap: 0.8rem;
+    }
+
+    .feature-item {
+      padding: 0.85rem 0.9rem;
+    }
+
+    .feature-item p {
+      font-size: 0.8rem;
+    }
+
+    .coming-soon-pill {
+      margin-top: 0.85rem;
+    }
+  }
