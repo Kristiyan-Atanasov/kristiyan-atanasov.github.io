@@ -112,15 +112,15 @@ a {
 .header-logo-mark {
   background: url('images/logo-app.png') no-repeat center center / contain;
   display: inline-block;
-  height: 64px;
-  width: 64px;
+  height: 84px;
+  width: 84px;
   flex-shrink: 0;
   filter: drop-shadow(0 6px 18px rgba(90, 70, 180, 0.35));
 }
 
 .header-logo-text {
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   font-weight: 500;
   letter-spacing: 0.03em;
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
@@ -802,12 +802,12 @@ textarea {
   }
 
   .header-logo-mark {
-    height: 48px;
-    width: 48px;
+    height: 64px;
+    width: 64px;
   }
 
   .header-logo-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .header-actions {
@@ -1008,8 +1008,8 @@ textarea {
 
 @media (max-height: 820px) and (min-width: 701px) {
   .header-logo-mark {
-    height: 52px;
-    width: 52px;
+    height: 72px;
+    width: 72px;
   }
 
   .page-main {
