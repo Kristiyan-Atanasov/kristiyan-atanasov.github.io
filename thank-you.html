@@ -4,46 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thank You - Astroinsights</title>
+  <meta name="description" content="Thanks for contacting Astroinsights. We will respond as soon as possible." />
   <link rel="stylesheet" href="index.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
 </head>
-<body>
+<body class="legal">
   <div class="main-bg"></div>
-  
-  <div class="header-row">
-    <div class="header-logo">
-      <a href="index.html" class="header-logo-mark" aria-label="Astroinsights home"></a>
-      <a href="index.html" class="header-logo-text">Astroinsights</a>
-    </div>
-    <button class="contact-btn" id="openContact">Contact Us</button>
-  </div>
+  <div class="atmosphere" aria-hidden="true"></div>
 
-  <div class="center-headings">
-    <h1>Thank You!</h1>
-    <span>We will respond to you as soon as possible.</span>
-  </div>
+  <div class="legal-shell">
+    <header class="header-row legal-header">
+      <div class="header-logo">
+        <a href="index.html" class="header-logo-mark" aria-label="Astroinsights home"></a>
+        <a href="index.html" class="header-logo-text">Astroinsights</a>
+      </div>
+      <a class="contact-btn" href="index.html">Home</a>
+    </header>
 
-  <!-- Contact Modal -->
-  <div class="contact-modal" id="contactModal">
-    <div class="modal-content">
-      <button class="modal-close" id="closeModal" title="Close">&times;</button>
-      <form id="contactForm" action="https://formspree.io/f/mnngynbd" method="POST">
-        <input type="hidden" name="_next" value="https://astroinsights.io/thank-you.html" />
-        <h2>Contact Astroinsights</h2>
-        
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required placeholder="Enter your name" />
-
-        <label for="msg">Message</label>
-        <textarea id="msg" name="message" required placeholder="Type your message"></textarea>
-        
-        <button type="submit" class="send-btn">Send</button>
-      </form>
+    <div class="thank-you-card">
+      <h1>Thank you</h1>
+      <p>We received your message and will respond as soon as possible.</p>
+      <a class="contact-btn" href="index.html">Back to home</a>
     </div>
   </div>
-  
-  <img src="images/girl-image-4.png" alt="Astroinsights Girl" class="girl-img" />
-
-  <script src="index.js"></script>
 </body>
 </html>
