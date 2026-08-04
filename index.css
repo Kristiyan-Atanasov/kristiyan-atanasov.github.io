@@ -785,6 +785,7 @@ textarea {
 
 @media (max-width: 700px) {
   body.home {
+    overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -793,8 +794,11 @@ textarea {
     height: auto;
     min-height: 100vh;
     min-height: 100dvh;
-    width: min(100%, calc(100vw - 1.4rem));
-    padding: 0.75rem 0 calc(1.4rem + env(safe-area-inset-bottom, 0px));
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.75rem 0.85rem calc(1.4rem + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
   }
 
   .header-logo-mark {
@@ -821,9 +825,20 @@ textarea {
   }
 
   .page-main {
+    width: 100%;
+    max-width: 100%;
     gap: 1.4rem;
     justify-content: flex-start;
     padding-top: 0.8rem;
+    box-sizing: border-box;
+  }
+
+  .hero,
+  .waitlist,
+  .features {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-eyebrow {
@@ -842,6 +857,8 @@ textarea {
     flex-direction: column;
     border-radius: 1.25rem;
     padding: 0.55rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .waitlist-shell input,
@@ -851,39 +868,53 @@ textarea {
   }
 
   .features-panel {
-    padding: 0.8rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.75rem;
     border-radius: 1.25rem;
+    box-sizing: border-box;
   }
 
   .features-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.65rem;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
   }
 
   .feature-item {
-    padding: 0.9rem 0.8rem;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0.85rem 0.7rem;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .feature-item h3 {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
   .feature-item p {
-    font-size: 0.76rem;
+    font-size: 0.74rem;
   }
 
   .page-footer {
+    width: 100%;
     margin-top: 1.2rem;
+    box-sizing: border-box;
   }
 
   .legal-shell {
-    width: min(100%, calc(100vw - 1.4rem));
-    padding-top: 0.85rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.85rem 0.85rem calc(2rem + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
   }
 
   .legal-doc {
     border-radius: 1.2rem;
     padding: 1.25rem 1.1rem 1.5rem;
+    box-sizing: border-box;
   }
 
   .legal-doc h1 {
@@ -905,6 +936,8 @@ textarea {
   }
 
   .cookieConsent {
+    left: 12px;
+    right: 12px;
     flex-direction: column;
     align-items: stretch;
     font-size: 0.92rem;
