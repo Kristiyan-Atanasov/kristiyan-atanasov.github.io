@@ -359,11 +359,10 @@ a {
 }
 
 .feature-icon {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.05rem;
+  height: 2.05rem;
   margin-bottom: 0.7rem;
   color: var(--accent);
-  opacity: 0.92;
 }
 
 .feature-icon svg {
@@ -371,7 +370,6 @@ a {
   height: 100%;
   display: block;
   overflow: visible;
-  shape-rendering: geometricPrecision;
 }
 
 .feature-item h3 {
