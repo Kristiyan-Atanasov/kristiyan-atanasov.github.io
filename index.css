@@ -25,13 +25,6 @@ body.home {
   overflow-y: auto;
 }
 
-@media (min-width: 901px) and (min-height: 820px) and (orientation: portrait),
-       (min-width: 1100px) and (min-height: 760px) {
-  body.home {
-    overflow: hidden;
-  }
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -81,13 +74,6 @@ a {
   padding: 1.4rem 0 calc(1.25rem + env(safe-area-inset-bottom, 0px));
 }
 
-@media (min-width: 901px) and (min-height: 820px) and (orientation: portrait),
-       (min-width: 1100px) and (min-height: 760px) {
-  .page {
-    height: 100vh;
-    height: 100dvh;
-  }
-}
 
 .header-row {
   position: relative;
@@ -406,34 +392,13 @@ a {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
-.delete-home-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.72rem 1.15rem;
-  border-radius: 999px;
-  background: rgba(14, 18, 34, 0.55);
-  border: 1px solid var(--line-strong);
-  color: var(--ink);
-  font-size: 0.92rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
-}
-
-.delete-home-btn:hover {
-  color: var(--white);
-  border-color: rgba(203, 184, 255, 0.5);
-  background: rgba(255, 255, 255, 0.06);
-  transform: translateY(-1px);
-}
-
 .legal-links {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
-  color: var(--soft);
+  color: rgba(247, 244, 255, 0.78);
   font-size: 0.84rem;
   letter-spacing: 0.04em;
 }
@@ -1070,11 +1035,6 @@ textarea {
   .contact-btn {
     padding: 0.55rem 0.9rem;
     font-size: 0.86rem;
-  }
-
-  .delete-home-btn {
-    padding: 0.55rem 0.8rem;
-    font-size: 0.8rem;
   }
 
   .page-main {
