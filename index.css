@@ -567,29 +567,45 @@ body.legal {
 }
 
 .account-step {
-  width: min(640px, 100%);
+  width: min(720px, 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.15rem;
+  gap: clamp(1.15rem, 2.4vh, 1.6rem);
 }
 
 .account-step[hidden] {
   display: none;
 }
 
-.account-step .features-panel,
-.account-step .feature-item,
-.account-step .confirm-check {
+.account-card {
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(1.4rem, 3vh, 2rem) clamp(1.2rem, 3vw, 2rem);
+  animation: none;
 }
 
-.account-step .feature-item:hover {
-  transform: none;
-  background: rgba(255, 255, 255, 0.035);
-  border-color: rgba(230, 219, 255, 0.08);
-  box-shadow: none;
+.account-card .feature-icon {
+  margin-bottom: 0.85rem;
+}
+
+.account-card h3 {
+  margin: 0 0 0.45rem;
+  color: var(--white);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-weight: 700;
+}
+
+.account-card p {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
 }
 
 .account-lead {
@@ -604,8 +620,9 @@ body.legal {
 .account-links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.55rem;
-  margin-top: 0.95rem;
+  margin-top: 1.1rem;
 }
 
 .store-pill {
@@ -696,11 +713,13 @@ body.legal {
   display: flex;
   gap: 0.75rem;
   align-items: flex-start;
+  width: min(36rem, 100%);
   margin: 0;
-  color: var(--ink);
+  color: var(--muted);
   font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.5;
+  text-align: left;
   cursor: pointer;
 }
 

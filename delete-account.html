@@ -6,7 +6,7 @@
   <title>Delete account - Astroinsights</title>
   <meta name="description" content="Delete your Astroinsights account and associated personal data. This does not cancel an Apple or Google Play subscription." />
   <meta name="robots" content="noindex" />
-  <link rel="stylesheet" href="index.css?v=delete-account-v8" />
+  <link rel="stylesheet" href="index.css?v=delete-account-v10" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="images/favicon.png" type="image/png" />
 </head>
@@ -37,22 +37,20 @@
 
       <div id="stepSignIn" class="account-step">
         <p class="account-lead" data-i18n="lead">Sign in with the Google account you used in the Astroinsights app. This page only opens an account that already exists. It does not create a new one.</p>
-        <div class="features-panel">
-          <article class="feature-item">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M20 13v8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <circle cx="20" cy="26.5" r="1.2" fill="currentColor"/>
-              </svg>
-            </div>
-            <h3 data-i18n="billingTitle">Your subscription will keep renewing.</h3>
-            <p data-i18n="billing">Deleting your account does not cancel an Apple App Store or Google Play subscription. The store keeps charging until you cancel there.</p>
-            <div class="account-links">
-              <a class="store-pill" href="https://play.google.com/store/account/subscriptions?package=io.astroinsights.app" data-i18n="googleLink">Manage Google Play subscription</a>
-              <a class="store-pill" href="https://apps.apple.com/account/subscriptions" data-i18n="appleLink">Manage App Store subscription</a>
-            </div>
-          </article>
+        <div class="features-panel account-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M20 13v8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="20" cy="26.5" r="1.2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 data-i18n="billingTitle">Your subscription will keep renewing.</h3>
+          <p data-i18n="billing">Deleting your account does not cancel an Apple App Store or Google Play subscription. The store keeps charging until you cancel there.</p>
+          <div class="account-links">
+            <a class="store-pill" href="https://play.google.com/store/account/subscriptions?package=io.astroinsights.app" data-i18n="googleLink">Manage Google Play subscription</a>
+            <a class="store-pill" href="https://apps.apple.com/account/subscriptions" data-i18n="appleLink">Manage App Store subscription</a>
+          </div>
         </div>
         <div class="google-signin">
             <button type="button" class="contact-btn google-signin-face" id="googleSignIn" aria-hidden="true" tabindex="-1">
@@ -74,24 +72,22 @@
 
       <div id="stepConfirm" class="account-step" hidden>
         <p class="account-lead" data-i18n="signedIn">You are signed in. Deleting the account removes the profile, birth details, and other personal data associated with it. We delete or anonymise that data within 90 days. We keep a record of the store entitlement so we can recognise an existing subscription. That is our decision, not a Google requirement. We also keep records the law requires, such as invoices.</p>
-        <div class="features-panel">
-          <article class="feature-item">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M20 13v8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <circle cx="20" cy="26.5" r="1.2" fill="currentColor"/>
-              </svg>
-            </div>
-            <h3 data-i18n="billingTitle">Your subscription will keep renewing.</h3>
-            <p data-i18n="billing">Deleting your account does not cancel an Apple App Store or Google Play subscription. The store keeps charging until you cancel there.</p>
-            <div class="account-links">
-              <a class="store-pill" href="https://play.google.com/store/account/subscriptions?package=io.astroinsights.app" data-i18n="googleLink">Manage Google Play subscription</a>
-              <a class="store-pill" href="https://apps.apple.com/account/subscriptions" data-i18n="appleLink">Manage App Store subscription</a>
-            </div>
-          </article>
+        <div class="features-panel account-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M20 13v8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="20" cy="26.5" r="1.2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 data-i18n="billingTitle">Your subscription will keep renewing.</h3>
+          <p data-i18n="billing">Deleting your account does not cancel an Apple App Store or Google Play subscription. The store keeps charging until you cancel there.</p>
+          <div class="account-links">
+            <a class="store-pill" href="https://play.google.com/store/account/subscriptions?package=io.astroinsights.app" data-i18n="googleLink">Manage Google Play subscription</a>
+            <a class="store-pill" href="https://apps.apple.com/account/subscriptions" data-i18n="appleLink">Manage App Store subscription</a>
+          </div>
         </div>
-        <label class="confirm-check feature-item" for="confirmDelete">
+        <label class="confirm-check" for="confirmDelete">
             <input type="checkbox" id="confirmDelete" />
             <span data-i18n="confirmLabel">I understand this permanently deletes my Astroinsights account and does not cancel my Apple or Google Play subscription.</span>
           </label>
@@ -103,22 +99,20 @@
 
       <div id="stepDone" class="account-step" hidden>
         <p class="account-lead" data-i18n="done">Your account has been deleted. You have been signed out of this page. If the app is still open, it will sign out the next time it reaches the server.</p>
-        <div class="features-panel">
-          <article class="feature-item">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M20 13v8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <circle cx="20" cy="26.5" r="1.2" fill="currentColor"/>
-              </svg>
-            </div>
-            <h3 data-i18n="billingTitle">Your subscription will keep renewing.</h3>
-            <p data-i18n="billingAfter">If you had a subscription, cancel it in the store. Deleting the account does not stop those charges.</p>
-            <div class="account-links">
-              <a class="store-pill" href="https://play.google.com/store/account/subscriptions?package=io.astroinsights.app" data-i18n="googleLink">Manage Google Play subscription</a>
-              <a class="store-pill" href="https://apps.apple.com/account/subscriptions" data-i18n="appleLink">Manage App Store subscription</a>
-            </div>
-          </article>
+        <div class="features-panel account-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M20 13v8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="20" cy="26.5" r="1.2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 data-i18n="billingTitle">Your subscription will keep renewing.</h3>
+          <p data-i18n="billingAfter">If you had a subscription, cancel it in the store. Deleting the account does not stop those charges.</p>
+          <div class="account-links">
+            <a class="store-pill" href="https://play.google.com/store/account/subscriptions?package=io.astroinsights.app" data-i18n="googleLink">Manage Google Play subscription</a>
+            <a class="store-pill" href="https://apps.apple.com/account/subscriptions" data-i18n="appleLink">Manage App Store subscription</a>
+          </div>
         </div>
       </div>
 
