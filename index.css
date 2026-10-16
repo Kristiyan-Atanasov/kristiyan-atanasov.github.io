@@ -406,6 +406,29 @@ a {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
+.delete-home-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.72rem 1.15rem;
+  border-radius: 999px;
+  background: rgba(14, 18, 34, 0.55);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.delete-home-btn:hover {
+  color: var(--white);
+  border-color: rgba(203, 184, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
 .legal-links {
   display: inline-flex;
   align-items: center;
@@ -536,6 +559,222 @@ body.legal {
 
 .legal-nav a:hover {
   color: var(--white);
+}
+
+/* Account deletion page */
+.page.account-page {
+  height: auto;
+}
+
+.account-main {
+  justify-content: flex-start;
+  padding-top: clamp(1rem, 4vh, 2.5rem);
+  gap: clamp(1.4rem, 3vh, 2rem);
+}
+
+.account-title {
+  margin-bottom: 0;
+  font-size: clamp(2.1rem, 4.8vw, 3.2rem);
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+.account-panel {
+  width: min(640px, 100%);
+  box-sizing: border-box;
+  padding: clamp(1.25rem, 3vh, 1.9rem);
+}
+
+.account-step[hidden] {
+  display: none;
+}
+
+.account-lead {
+  margin: 0 0 1.15rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.account-warning {
+  margin: 0 0 1.25rem;
+  padding: 1.15rem 1.2rem;
+  animation: none;
+}
+
+.account-warning:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.account-warning p {
+  font-size: 0.92rem;
+}
+
+.account-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.95rem;
+}
+
+.store-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(14, 18, 34, 0.55);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.store-pill:hover {
+  color: var(--white);
+  border-color: rgba(203, 184, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.google-signin {
+  position: relative;
+  width: min(280px, 100%);
+  height: 44px;
+  margin: 1.25rem auto 0.15rem;
+}
+
+.google-signin-face {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0 1.15rem;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+}
+
+.google-signin-face svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.google-signin-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.google-signin-hit.is-ready {
+  pointer-events: auto;
+}
+
+.account-app-note {
+  margin: 1.05rem 0 0;
+  color: var(--soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.google-signin-hit > div,
+.google-signin-hit iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.confirm-check {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin: 0 0 1.25rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(230, 219, 255, 0.08);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.confirm-check input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.account-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.danger-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  color: var(--deep);
+}
+
+.secondary-btn {
+  border-radius: 999px;
+  padding: 0.85rem 1.35rem;
+  background: rgba(14, 18, 34, 0.55);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.secondary-btn:hover {
+  color: var(--white);
+  border-color: rgba(203, 184, 255, 0.5);
+}
+
+.account-status {
+  margin: 1.1rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.account-status.is-error {
+  color: #ffc9c9;
+}
+
+@media (max-width: 700px) {
+  .account-title {
+    font-size: 2rem;
+  }
+
+  .account-panel {
+    padding: 1rem;
+  }
+
+  .account-actions .waitlist-btn,
+  .account-actions .secondary-btn {
+    width: 100%;
+  }
 }
 
 .thank-you-card {
@@ -812,6 +1051,8 @@ textarea {
 
   .header-actions {
     gap: 0.45rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   .lang-btn {
@@ -822,6 +1063,11 @@ textarea {
   .contact-btn {
     padding: 0.55rem 0.9rem;
     font-size: 0.86rem;
+  }
+
+  .delete-home-btn {
+    padding: 0.55rem 0.8rem;
+    font-size: 0.8rem;
   }
 
   .page-main {
