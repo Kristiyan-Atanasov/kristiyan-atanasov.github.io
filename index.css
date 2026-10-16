@@ -561,55 +561,44 @@ body.legal {
   color: var(--white);
 }
 
-/* Account deletion page */
+/* Account deletion page — uses the homepage hero, panel, and cards */
 .page.account-page {
   height: auto;
 }
 
-.account-main {
-  justify-content: flex-start;
-  padding-top: clamp(1rem, 4vh, 2.5rem);
-  gap: clamp(1.4rem, 3vh, 2rem);
-}
-
-.account-title {
-  margin-bottom: 0;
-  font-size: clamp(2.1rem, 4.8vw, 3.2rem);
-  letter-spacing: 0.05em;
-  line-height: 1.1;
-}
-
-.account-panel {
+.account-step {
   width: min(640px, 100%);
-  box-sizing: border-box;
-  padding: clamp(1.25rem, 3vh, 1.9rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
 }
 
 .account-step[hidden] {
   display: none;
 }
 
-.account-lead {
-  margin: 0 0 1.15rem;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: center;
+.account-step .features-panel,
+.account-step .feature-item,
+.account-step .confirm-check {
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.account-warning {
-  margin: 0 0 1.25rem;
-  padding: 1.15rem 1.2rem;
-  animation: none;
-}
-
-.account-warning:hover {
+.account-step .feature-item:hover {
   transform: none;
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(230, 219, 255, 0.08);
   box-shadow: none;
 }
 
-.account-warning p {
-  font-size: 0.92rem;
+.account-lead {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.55;
+  text-align: center;
 }
 
 .account-links {
@@ -630,6 +619,8 @@ body.legal {
   font-size: 0.84rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 
@@ -641,9 +632,9 @@ body.legal {
 
 .google-signin {
   position: relative;
-  width: min(280px, 100%);
-  height: 44px;
-  margin: 1.25rem auto 0.15rem;
+  width: min(260px, 100%);
+  height: 46px;
+  margin: 0;
 }
 
 .google-signin-face {
@@ -679,11 +670,20 @@ body.legal {
 }
 
 .account-app-note {
-  margin: 1.05rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.28rem;
+  margin: 0;
   color: var(--soft);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  line-height: 1.45;
   text-align: center;
+}
+
+.account-path {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .google-signin-hit > div,
@@ -696,13 +696,9 @@ body.legal {
   display: flex;
   gap: 0.75rem;
   align-items: flex-start;
-  margin: 0 0 1.25rem;
-  padding: 0.95rem 1.1rem;
-  border-radius: 1.2rem;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(230, 219, 255, 0.08);
+  margin: 0;
   color: var(--ink);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.5;
   cursor: pointer;
@@ -763,14 +759,6 @@ body.legal {
 }
 
 @media (max-width: 700px) {
-  .account-title {
-    font-size: 2rem;
-  }
-
-  .account-panel {
-    padding: 1rem;
-  }
-
   .account-actions .waitlist-btn,
   .account-actions .secondary-btn {
     width: 100%;
