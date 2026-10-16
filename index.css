@@ -302,6 +302,8 @@ a {
 
 .features-panel {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: clamp(1.15rem, 2.4vh, 1.6rem);
   border-radius: 1.75rem;
   background: linear-gradient(180deg, rgba(18, 22, 40, 0.42), rgba(12, 16, 30, 0.28));
@@ -320,6 +322,9 @@ a {
 
 .feature-item {
   position: relative;
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
   padding: clamp(1.15rem, 2vh, 1.4rem) clamp(1.05rem, 1.4vw, 1.25rem);
   border-radius: 1.2rem;
   background: rgba(255, 255, 255, 0.035);
@@ -398,7 +403,7 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-  color: rgba(247, 244, 255, 0.78);
+  color: var(--accent);
   font-size: 0.84rem;
   letter-spacing: 0.04em;
 }
