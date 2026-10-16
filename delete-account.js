@@ -22,6 +22,7 @@
       signedIn: 'You are signed in. Deleting the account removes the profile, birth details, and other personal data associated with it. We delete or anonymise that data within 90 days. We keep a record of the store entitlement so we can recognise an existing subscription. That is our decision, not a Google requirement. We also keep records the law requires, such as invoices.',
       confirmLabel: 'I understand this permanently deletes my Astroinsights account and does not cancel my Apple or Google Play subscription.',
       delete: 'Delete my account',
+      deleting: 'Deleting your account…',
       signOut: 'Sign out',
       done: 'Your account has been deleted. You have been signed out of this page. If the app is still open, it will sign out the next time it reaches the server.',
       privacy: 'Privacy',
@@ -48,6 +49,7 @@
       signedIn: 'Влязъл си. Изтриването премахва профила, данните за раждане и другите лични данни, свързани с него. Изтриваме или анонимизираме тези данни в рамките на 90 дни. Пазим запис за абонамента в магазина, за да разпознаем съществуващ абонамент. Това е наше решение, не изискване на Google. Пазим и записи, които законът изисква, например фактури.',
       confirmLabel: 'Разбирам, че това изтрива завинаги профила ми в Astroinsights и не прекратява абонамента ми в Apple или Google Play.',
       delete: 'Изтрий профила ми',
+      deleting: 'Изтриване на профила…',
       signOut: 'Изход',
       done: 'Профилът е изтрит. Излязъл си от тази страница. Ако приложението е още отворено, ще те изведе следващия път, когато се свърже със сървъра.',
       privacy: 'Поверителност',
@@ -182,16 +184,19 @@
     const confirmed = document.getElementById('confirmDelete').checked;
     if (deleting || !confirmed || !token) return;
     deleting = true;
-    document.getElementById('deleteButton').disabled = true;
-    setStatus(text().working, false);
+    const button = document.getElementById('deleteButton');
+    button.disabled = true;
+    button.textContent = text().deleting;
+    setStatus('', false);
     try {
       const res = await fetch(`${API_BASE}/authentication/delete_account/`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      if (res.status === 204) {
+      if (res.ok || res.status === 204 || res.status === 410) {
         stopSession();
+        button.textContent = text().delete;
         showStep('done');
         setStatus('', false);
         return;
@@ -204,10 +209,12 @@
         return;
       }
 
-      document.getElementById('deleteButton').disabled = !document.getElementById('confirmDelete').checked;
+      button.disabled = !document.getElementById('confirmDelete').checked;
+      button.textContent = text().delete;
       setStatus(text().failed, true);
     } catch {
-      document.getElementById('deleteButton').disabled = !document.getElementById('confirmDelete').checked;
+      button.disabled = !document.getElementById('confirmDelete').checked;
+      button.textContent = text().delete;
       setStatus(text().failed, true);
     } finally {
       deleting = false;
